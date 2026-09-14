@@ -3,278 +3,1296 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>وَشْيِ — حلول رقمية</title>
+
+    <title>وَشْيِ — نصنع حضورك الرقمي</title>
+
+    <meta name="description"
+          content="وَشْيِ — حلول رقمية وتصاميم وتجارب رقمية تساعد أعمالك تظهر بشكل أفضل.">
 
     <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap');
+
+        :root {
+            --bg: #f4f2ec;
+            --surface: #faf9f5;
+            --dark: #101713;
+            --green: #17372b;
+            --green-2: #244b3b;
+            --gold: #b3945b;
+            --muted: #777b75;
+            --line: rgba(16, 23, 19, .10);
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background: #f7f5ef;
-            color: #18251f;
-            line-height: 1.7;
+            background: var(--bg);
+            color: var(--dark);
+            font-family: "IBM Plex Sans Arabic", "Cairo", sans-serif;
+            overflow-x: hidden;
         }
 
-        header {
-            padding: 22px 7%;
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        nav {
+            width: min(1180px, 90%);
+            margin: 20px auto 0;
+
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+
+            padding: 14px 18px;
+
+            background: rgba(250, 249, 245, .82);
+            backdrop-filter: blur(18px);
+
+            border: 1px solid var(--line);
+            border-radius: 18px;
+
+            position: relative;
+            z-index: 20;
         }
 
-        .logo {
-            font-size: 28px;
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            font-size: 23px;
             font-weight: 800;
+            letter-spacing: -1px;
         }
 
-        .logo span {
-            color: #a9874f;
+        .brand-mark {
+            width: 34px;
+            height: 34px;
+
+            display: grid;
+            place-items: center;
+
+            background: var(--dark);
+            color: white;
+
+            border-radius: 10px;
+
+            font-size: 17px;
         }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+
+            color: #535952;
+            font-size: 14px;
+        }
+
+        .nav-links a {
+            transition: .25s;
+        }
+
+        .nav-links a:hover {
+            color: var(--dark);
+        }
+
+        .nav-button {
+            background: var(--dark);
+            color: white;
+
+            padding: 10px 17px;
+            border-radius: 11px;
+
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
 
         .hero {
-            padding: 70px 7% 90px;
-            max-width: 1100px;
+            width: min(1180px, 90%);
+            min-height: 720px;
+
             margin: auto;
-        }
 
-        .tag {
-            display: inline-block;
-            background: #e8e4d8;
-            padding: 7px 14px;
-            border-radius: 30px;
-            font-size: 14px;
-            margin-bottom: 25px;
-        }
-
-        h1 {
-            font-size: clamp(42px, 8vw, 78px);
-            line-height: 1.05;
-            max-width: 850px;
-            margin-bottom: 25px;
-        }
-
-        .hero p {
-            max-width: 650px;
-            font-size: 18px;
-            color: #59625d;
-            margin-bottom: 35px;
-        }
-
-        .buttons {
             display: flex;
+            align-items: center;
+
+            position: relative;
+        }
+
+        .hero-content {
+            width: 65%;
+            padding: 100px 0;
+            position: relative;
+            z-index: 3;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            padding: 8px 13px;
+
+            background: rgba(23, 55, 43, .07);
+            border: 1px solid rgba(23, 55, 43, .12);
+
+            border-radius: 100px;
+
+            font-size: 12px;
+            color: var(--green);
+            font-weight: 700;
+
+            margin-bottom: 25px;
+        }
+
+        .eyebrow span {
+            width: 7px;
+            height: 7px;
+            background: var(--gold);
+            border-radius: 50%;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 7vw, 91px);
+            line-height: .98;
+
+            letter-spacing: -4px;
+
+            max-width: 850px;
+
+            margin-bottom: 30px;
+        }
+
+        .hero h1 em {
+            color: var(--green);
+            font-style: normal;
+        }
+
+        .hero-description {
+            max-width: 600px;
+
+            color: var(--muted);
+            font-size: 17px;
+            line-height: 1.9;
+
+            margin-bottom: 34px;
+        }
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
             gap: 12px;
+
             flex-wrap: wrap;
         }
 
-        .btn {
-            text-decoration: none;
-            padding: 14px 22px;
-            border-radius: 12px;
-            font-weight: 700;
-            display: inline-block;
-        }
+        .main-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
 
-        .primary {
-            background: #18251f;
+            background: var(--dark);
             color: white;
+
+            padding: 15px 22px;
+
+            border-radius: 13px;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            transition: .25s;
         }
 
-        .secondary {
-            border: 1px solid #c9c5b9;
-            color: #18251f;
+        .main-button:hover {
+            transform: translateY(-3px);
         }
+
+        .main-button .arrow {
+            font-size: 18px;
+        }
+
+        .outline-button {
+            display: inline-flex;
+
+            padding: 14px 20px;
+
+            border: 1px solid var(--line);
+            border-radius: 13px;
+
+            color: #464c47;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            transition: .25s;
+        }
+
+        .outline-button:hover {
+            background: white;
+        }
+
+        /* Hero visual */
+
+        .hero-orbit {
+            position: absolute;
+
+            width: 470px;
+            height: 470px;
+
+            left: -40px;
+            top: 125px;
+
+            border: 1px solid rgba(23, 55, 43, .12);
+            border-radius: 50%;
+        }
+
+        .hero-orbit::before {
+            content: "";
+
+            position: absolute;
+
+            width: 310px;
+            height: 310px;
+
+            left: 80px;
+            top: 80px;
+
+            background:
+                radial-gradient(
+                    circle at 35% 30%,
+                    #345d4b,
+                    #17372b 55%,
+                    #0e2119
+                );
+
+            border-radius: 50%;
+
+            box-shadow:
+                0 35px 80px rgba(23, 55, 43, .25);
+        }
+
+        .floating-card {
+            position: absolute;
+
+            width: 185px;
+
+            left: 50px;
+            top: 145px;
+
+            padding: 18px;
+
+            background: rgba(250, 249, 245, .94);
+
+            border: 1px solid rgba(255,255,255,.5);
+
+            border-radius: 17px;
+
+            box-shadow: 0 25px 60px rgba(16, 23, 19, .14);
+
+            z-index: 4;
+        }
+
+        .floating-card small {
+            color: var(--muted);
+            font-size: 10px;
+        }
+
+        .floating-card strong {
+            display: block;
+
+            font-size: 25px;
+
+            margin: 5px 0 4px;
+        }
+
+        .floating-card p {
+            color: var(--muted);
+            font-size: 10px;
+        }
+
+        .floating-number {
+            position: absolute;
+
+            left: 385px;
+            top: 110px;
+
+            color: var(--gold);
+
+            font-size: 11px;
+            letter-spacing: 2px;
+
+            transform: rotate(-90deg);
+        }
+
+        /* =========================
+           TRUST BAR
+        ========================= */
+
+        .trust {
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+
+            padding: 22px 0;
+        }
+
+        .trust-inner {
+            width: min(1180px, 90%);
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            color: #777b75;
+
+            font-size: 12px;
+        }
+
+        .trust-inner strong {
+            color: var(--dark);
+        }
+
+        /* =========================
+           SECTIONS
+        ========================= */
 
         section {
-            padding: 70px 7%;
-            max-width: 1200px;
+            width: min(1180px, 90%);
             margin: auto;
         }
 
-        .section-title {
-            font-size: 36px;
-            margin-bottom: 35px;
+        .section {
+            padding: 120px 0;
         }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
+        .section-label {
+            color: var(--gold);
 
-        .card {
-            background: white;
-            border: 1px solid #e6e2d8;
-            padding: 28px;
-            border-radius: 20px;
-        }
-
-        .card h3 {
-            margin-bottom: 10px;
-            font-size: 21px;
-        }
-
-        .card p {
-            color: #68706b;
-        }
-
-        .number {
-            color: #a9874f;
+            font-size: 12px;
             font-weight: 800;
-            margin-bottom: 20px;
+
+            margin-bottom: 13px;
+
+            letter-spacing: 1px;
         }
 
-        .cta {
-            background: #18251f;
+        .section-heading {
+            max-width: 650px;
+
+            font-size: clamp(32px, 5vw, 57px);
+
+            line-height: 1.1;
+
+            letter-spacing: -2px;
+
+            margin-bottom: 50px;
+        }
+
+        /* =========================
+           SERVICES
+        ========================= */
+
+        .services {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 14px;
+        }
+
+        .service {
+            min-height: 270px;
+
+            padding: 32px;
+
+            background: var(--surface);
+
+            border: 1px solid var(--line);
+
+            border-radius: 24px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            transition: .3s;
+        }
+
+        .service:hover {
+            transform: translateY(-5px);
+
+            border-color: rgba(23,55,43,.25);
+
+            box-shadow: 0 20px 50px rgba(16,23,19,.06);
+        }
+
+        .service-number {
+            font-size: 12px;
+            color: var(--gold);
+
+            font-weight: 800;
+
+            margin-bottom: 65px;
+        }
+
+        .service h3 {
+            font-size: 25px;
+
+            margin-bottom: 10px;
+        }
+
+        .service p {
+            max-width: 390px;
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+        .service-symbol {
+            position: absolute;
+
+            left: -20px;
+            bottom: -45px;
+
+            width: 150px;
+            height: 150px;
+
+            border: 1px solid rgba(23,55,43,.10);
+
+            border-radius: 50%;
+        }
+
+        .service-symbol::after {
+            content: "";
+
+            position: absolute;
+
+            width: 65px;
+            height: 65px;
+
+            left: 42px;
+            top: 42px;
+
+            background: var(--green);
+
+            border-radius: 50%;
+        }
+
+        /* =========================
+           SHOWCASE
+        ========================= */
+
+        .showcase {
+            display: grid;
+
+            grid-template-columns: 1.2fr .8fr;
+
+            gap: 16px;
+        }
+
+        .project {
+            min-height: 450px;
+
+            padding: 30px;
+
+            border-radius: 25px;
+
+            position: relative;
+
+            overflow: hidden;
+
             color: white;
-            border-radius: 28px;
-            padding: 55px;
-            margin: 50px 7%;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .cta p {
-            color: #cdd3cf;
-            margin: 12px 0 25px;
+        .project-main {
+            background:
+                linear-gradient(
+                    140deg,
+                    #183b2d,
+                    #0b1913
+                );
         }
+
+        .project-small {
+            background:
+                linear-gradient(
+                    140deg,
+                    #b3945b,
+                    #745a2e
+                );
+        }
+
+        .project-tag {
+            font-size: 11px;
+
+            padding: 7px 10px;
+
+            border: 1px solid rgba(255,255,255,.25);
+
+            border-radius: 50px;
+
+            width: fit-content;
+        }
+
+        .project h3 {
+            font-size: 34px;
+
+            max-width: 420px;
+
+            line-height: 1.1;
+
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            max-width: 400px;
+
+            color: rgba(255,255,255,.65);
+
+            font-size: 13px;
+        }
+
+        .project::after {
+            content: "وَشْيِ";
+
+            position: absolute;
+
+            font-size: 150px;
+
+            font-weight: 800;
+
+            opacity: .035;
+
+            left: -15px;
+            bottom: 20px;
+
+            transform: rotate(-10deg);
+        }
+
+        /* =========================
+           PROCESS
+        ========================= */
+
+        .process {
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 1px;
+
+            background: var(--line);
+
+            border: 1px solid var(--line);
+
+            border-radius: 20px;
+
+            overflow: hidden;
+        }
+
+        .process-item {
+            background: var(--surface);
+
+            padding: 28px;
+
+            min-height: 210px;
+        }
+
+        .process-item span {
+            color: var(--gold);
+
+            font-size: 12px;
+
+            font-weight: 800;
+        }
+
+        .process-item h3 {
+            margin: 45px 0 8px;
+
+            font-size: 18px;
+        }
+
+        .process-item p {
+            color: var(--muted);
+
+            font-size: 12px;
+
+            line-height: 1.8;
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .final-cta {
+            padding: 100px 30px;
+
+            text-align: center;
+
+            background: var(--dark);
+
+            color: white;
+
+            border-radius: 30px;
+
+            margin-bottom: 80px;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: "";
+
+            position: absolute;
+
+            width: 400px;
+            height: 400px;
+
+            background: var(--green);
+
+            border-radius: 50%;
+
+            top: -250px;
+            left: -150px;
+
+            opacity: .7;
+        }
+
+        .final-cta > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .final-cta h2 {
+            font-size: clamp(36px, 6vw, 65px);
+
+            letter-spacing: -2px;
+
+            margin-bottom: 17px;
+        }
+
+        .final-cta p {
+            color: #aeb7b1;
+
+            max-width: 500px;
+
+            margin: 0 auto 30px;
+
+            font-size: 14px;
+        }
+
+        .final-cta a {
+            display: inline-flex;
+
+            padding: 15px 25px;
+
+            background: white;
+
+            color: var(--dark);
+
+            border-radius: 13px;
+
+            font-size: 14px;
+
+            font-weight: 800;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
-            padding: 35px 7%;
-            color: #737a75;
-            font-size: 14px;
-            text-align: center;
+            width: min(1180px, 90%);
+
+            margin: auto;
+
+            padding: 0 0 30px;
+
+            display: flex;
+            justify-content: space-between;
+
+            color: #81857f;
+
+            font-size: 11px;
         }
 
-        @media (max-width: 700px) {
-            .grid {
-                grid-template-columns: 1fr;
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            nav {
+                margin-top: 12px;
             }
 
             .hero {
-                padding-top: 45px;
+                min-height: auto;
             }
 
-            .cta {
-                margin: 30px 5%;
-                padding: 35px 25px;
+            .hero-content {
+                width: 100%;
+
+                padding: 85px 0 50px;
+            }
+
+            .hero h1 {
+                letter-spacing: -2.5px;
+            }
+
+            .hero-description {
+                font-size: 15px;
+            }
+
+            .hero-orbit {
+                opacity: .18;
+
+                width: 330px;
+                height: 330px;
+
+                left: -100px;
+                top: 190px;
+            }
+
+            .hero-orbit::before {
+                width: 220px;
+                height: 220px;
+
+                left: 55px;
+                top: 55px;
+            }
+
+            .floating-card {
+                left: 0;
+                top: 240px;
+
+                opacity: .75;
+            }
+
+            .floating-number {
+                display: none;
+            }
+
+            .trust-inner {
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 5px;
+            }
+
+            .section {
+                padding: 80px 0;
+            }
+
+            .services {
+                grid-template-columns: 1fr;
+            }
+
+            .showcase {
+                grid-template-columns: 1fr;
+            }
+
+            .project {
+                min-height: 330px;
+            }
+
+            .process {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .final-cta {
+                padding: 70px 20px;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 8px;
             }
         }
+
+        @media (max-width: 480px) {
+
+            .brand {
+                font-size: 20px;
+            }
+
+            .nav-button {
+                padding: 9px 13px;
+                font-size: 11px;
+            }
+
+            .hero h1 {
+                font-size: 51px;
+            }
+
+            .hero-orbit {
+                left: -140px;
+            }
+
+            .floating-card {
+                display: none;
+            }
+
+            .process {
+                grid-template-columns: 1fr;
+            }
+
+            .process-item {
+                min-height: 170px;
+            }
+
+            .process-item h3 {
+                margin-top: 25px;
+            }
+        }
+
     </style>
 </head>
 
+
 <body>
 
-<header>
-    <div class="logo">وَشْيِ<span>.</span></div>
-</header>
+    <!-- NAVIGATION -->
 
-<main>
+    <nav>
 
-    <section class="hero">
-        <div class="tag">حلول رقمية للأعمال</div>
-
-        <h1>
-            نخلي حضورك الرقمي
-            يشتغل لصالحك.
-        </h1>
-
-        <p>
-            في وَشْيِ نصمم واجهات رقمية احترافية
-            تساعد نشاطك على عرض خدماته، منتجاته،
-            عروضه وطرق التواصل معه بشكل واضح ومقنع.
-        </p>
-
-        <div class="buttons">
-            <a href="#services" class="btn primary">اكتشف خدماتنا</a>
-            <a href="#contact" class="btn secondary">تواصل معنا</a>
-        </div>
-    </section>
-
-
-    <section id="services">
-        <h2 class="section-title">وش نقدر نسوي لك؟</h2>
-
-        <div class="grid">
-
-            <div class="card">
-                <div class="number">01</div>
-                <h3>واجهة رقمية</h3>
-                <p>
-                    صفحة احترافية تجمع خدماتك،
-                    منتجاتك، عروضك وطرق التواصل
-                    في مكان واحد.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="number">02</div>
-                <h3>منيو رقمي</h3>
-                <p>
-                    عرض مرتب للخدمات أو المنتجات
-                    والأسعار مع وصول مباشر للطلب.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="number">03</div>
-                <h3>كتالوج إلكتروني</h3>
-                <p>
-                    طريقة احترافية لعرض أعمالك
-                    ومنتجاتك بدون تعقيد.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="number">04</div>
-                <h3>صفحة عروض</h3>
-                <p>
-                    صفحة مخصصة لعرض حملة أو عرض
-                    وتحويل الزائر مباشرة للتواصل.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="number">05</div>
-                <h3>صفحة حجز</h3>
-                <p>
-                    تسهّل على العميل معرفة الخدمة
-                    والوصول للحجز أو الاستفسار.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="number">06</div>
-                <h3>حلول مخصصة</h3>
-                <p>
-                    نبني لك الحل الرقمي المناسب
-                    حسب طبيعة نشاطك واحتياجه.
-                </p>
-            </div>
-
-        </div>
-    </section>
-
-
-    <div class="cta" id="contact">
-        <h2>عندك نشاط وتبي تطوره؟</h2>
-
-        <p>
-            خلنا نرتب حضورك الرقمي بطريقة أوضح،
-            أسرع وأسهل لعملائك.
-        </p>
-
-        <a href="https://wa.me/" class="btn secondary">
-            تواصل معنا
+        <a href="#" class="brand">
+            <span class="brand-mark">و</span>
+            وَشْيِ
         </a>
-    </div>
 
-</main>
+        <div class="nav-links">
+            <a href="#services">الخدمات</a>
+            <a href="#work">أعمالنا</a>
+            <a href="#process">كيف نعمل</a>
+        </div>
 
-<footer>
-    © 2026 وَشْيِ — جميع الحقوق محفوظة
-</footer>
+        <a href="#contact" class="nav-button">
+            ابدأ مشروعك
+        </a>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="eyebrow">
+                    <span></span>
+                    حلول رقمية للأعمال
+                </div>
+
+                <h1>
+                    حضورك الرقمي
+                    <em>يستحق أكثر.</em>
+                </h1>
+
+                <p class="hero-description">
+                    في وَشْيِ نبني تجارب رقمية واضحة،
+                    أنيقة ومصممة حول احتياج نشاطك —
+                    من الواجهة الأولى إلى اللحظة التي يتواصل
+                    فيها العميل معك.
+                </p>
+
+                <div class="hero-actions">
+
+                    <a href="#contact" class="main-button">
+                        خلنا نبدأ
+                        <span class="arrow">←</span>
+                    </a>
+
+                    <a href="#work" class="outline-button">
+                        شوف وش نسوي
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-orbit">
+
+                <div class="floating-card">
+
+                    <small>وَشْيِ / DIGITAL</small>
+
+                    <strong>01</strong>
+
+                    <p>
+                        نبني حضورًا رقميًا
+                        له هدف، مو مجرد شكل.
+                    </p>
+
+                </div>
+
+                <div class="floating-number">
+                    EST. 2026
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TRUST -->
+
+        <div class="trust">
+
+            <div class="trust-inner">
+
+                <span>
+                    تصميم <strong>واضح</strong>
+                </span>
+
+                <span>
+                    تجربة <strong>أسهل</strong>
+                </span>
+
+                <span>
+                    حلول <strong>عملية</strong>
+                </span>
+
+                <span>
+                    نتائج <strong>قابلة للقياس</strong>
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- SERVICES -->
+
+        <section class="section" id="services">
+
+            <div class="section-label">
+                WHAT WE DO
+            </div>
+
+            <h2 class="section-heading">
+                نأخذ فكرتك،
+                ونحوّلها إلى تجربة رقمية.
+            </h2>
+
+
+            <div class="services">
+
+                <article class="service">
+
+                    <div class="service-number">
+                        01 / DIGITAL PRESENCE
+                    </div>
+
+                    <h3>
+                        الواجهات الرقمية
+                    </h3>
+
+                    <p>
+                        مواقع وصفحات احترافية تجمع
+                        خدماتك، أعمالك، عروضك وطرق
+                        التواصل في تجربة واحدة.
+                    </p>
+
+                    <div class="service-symbol"></div>
+
+                </article>
+
+
+                <article class="service">
+
+                    <div class="service-number">
+                        02 / PRODUCTS
+                    </div>
+
+                    <h3>
+                        المنيو والكتالوجات
+                    </h3>
+
+                    <p>
+                        نرتب منتجاتك وخدماتك بطريقة
+                        تجعل العميل يفهمها ويصل إليها
+                        بدون ضياع.
+                    </p>
+
+                    <div class="service-symbol"></div>
+
+                </article>
+
+
+                <article class="service">
+
+                    <div class="service-number">
+                        03 / CONVERSION
+                    </div>
+
+                    <h3>
+                        صفحات التحويل
+                    </h3>
+
+                    <p>
+                        صفحات مصممة لهدف محدد:
+                        طلب، حجز، استفسار، عرض
+                        أو حملة تسويقية.
+                    </p>
+
+                    <div class="service-symbol"></div>
+
+                </article>
+
+
+                <article class="service">
+
+                    <div class="service-number">
+                        04 / CUSTOM
+                    </div>
+
+                    <h3>
+                        حلول مخصصة
+                    </h3>
+
+                    <p>
+                        إذا احتياجك ما يناسب قالبًا
+                        جاهزًا، نبني لك الحل من
+                        الصفر بما يناسب نشاطك.
+                    </p>
+
+                    <div class="service-symbol"></div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- WORK -->
+
+        <section class="section" id="work">
+
+            <div class="section-label">
+                SELECTED WORK
+            </div>
+
+            <h2 class="section-heading">
+                الفكرة حلوة،
+                لكن التنفيذ هو اللي يفرق.
+            </h2>
+
+
+            <div class="showcase">
+
+                <article class="project project-main">
+
+                    <span class="project-tag">
+                        DIGITAL EXPERIENCE
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            واجهة رقمية
+                            لنشاط تجاري.
+                        </h3>
+
+                        <p>
+                            تجربة تجمع الهوية،
+                            الخدمات، المنتجات
+                            والتواصل في مكان واحد.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="project project-small">
+
+                    <span class="project-tag">
+                        PRODUCT
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            منيو.
+                            كتالوج.
+                            تجربة.
+                        </h3>
+
+                        <p>
+                            أقل خطوات للعميل،
+                            أوضح قرار للشراء.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROCESS -->
+
+        <section class="section" id="process">
+
+            <div class="section-label">
+                OUR PROCESS
+            </div>
+
+            <h2 class="section-heading">
+                من الفكرة
+                إلى شيء تقدر تستخدمه.
+            </h2>
+
+
+            <div class="process">
+
+                <div class="process-item">
+
+                    <span>01</span>
+
+                    <h3>
+                        نفهم
+                    </h3>
+
+                    <p>
+                        نحدد وش يحتاج نشاطك
+                        فعلًا قبل ما نبدأ.
+                    </p>
+
+                </div>
+
+
+                <div class="process-item">
+
+                    <span>02</span>
+
+                    <h3>
+                        نصمم
+                    </h3>
+
+                    <p>
+                        نحول الفكرة إلى
+                        تجربة واضحة وجذابة.
+                    </p>
+
+                </div>
+
+
+                <div class="process-item">
+
+                    <span>03</span>
+
+                    <h3>
+                        نبني
+                    </h3>
+
+                    <p>
+                        نحول التصميم إلى
+                        منتج رقمي فعلي.
+                    </p>
+
+                </div>
+
+
+                <div class="process-item">
+
+                    <span>04</span>
+
+                    <h3>
+                        نسلّم
+                    </h3>
+
+                    <p>
+                        تستلم منتجًا جاهزًا
+                        للاستخدام والتطوير.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FINAL CTA -->
+
+        <section id="contact">
+
+            <div class="final-cta">
+
+                <h2>
+                    عندك فكرة؟
+                    خلنا نبنيها.
+                </h2>
+
+                <p>
+                    إذا عندك نشاط أو مشروع يحتاج
+                    حضورًا رقميًا أفضل، وَشْيِ جاهز.
+                </p>
+
+                <a href="https://wa.me/966500000000">
+                    تواصل مع وَشْيِ
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <span>
+            © 2026 وَشْيِ
+        </span>
+
+        <span>
+            Digital experiences, thoughtfully built.
+        </span>
+
+    </footer>
 
 </body>
 </html>

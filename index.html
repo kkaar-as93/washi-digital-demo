@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>وَشْيِ — حلول رقمية</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f5ef;
+            color: #18251f;
+            line-height: 1.7;
+        }
+
+        header {
+            padding: 22px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+        }
+
+        .logo span {
+            color: #a9874f;
+        }
+
+        .hero {
+            padding: 70px 7% 90px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #e8e4d8;
+            padding: 7px 14px;
+            border-radius: 30px;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: clamp(42px, 8vw, 78px);
+            line-height: 1.05;
+            max-width: 850px;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            font-size: 18px;
+            color: #59625d;
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            text-decoration: none;
+            padding: 14px 22px;
+            border-radius: 12px;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        .primary {
+            background: #18251f;
+            color: white;
+        }
+
+        .secondary {
+            border: 1px solid #c9c5b9;
+            color: #18251f;
+        }
+
+        section {
+            padding: 70px 7%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 35px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #e6e2d8;
+            padding: 28px;
+            border-radius: 20px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            font-size: 21px;
+        }
+
+        .card p {
+            color: #68706b;
+        }
+
+        .number {
+            color: #a9874f;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .cta {
+            background: #18251f;
+            color: white;
+            border-radius: 28px;
+            padding: 55px;
+            margin: 50px 7%;
+        }
+
+        .cta p {
+            color: #cdd3cf;
+            margin: 12px 0 25px;
+        }
+
+        footer {
+            padding: 35px 7%;
+            color: #737a75;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        @media (max-width: 700px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 45px;
+            }
+
+            .cta {
+                margin: 30px 5%;
+                padding: 35px 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">وَشْيِ<span>.</span></div>
+</header>
+
+<main>
+
+    <section class="hero">
+        <div class="tag">حلول رقمية للأعمال</div>
+
+        <h1>
+            نخلي حضورك الرقمي
+            يشتغل لصالحك.
+        </h1>
+
+        <p>
+            في وَشْيِ نصمم واجهات رقمية احترافية
+            تساعد نشاطك على عرض خدماته، منتجاته،
+            عروضه وطرق التواصل معه بشكل واضح ومقنع.
+        </p>
+
+        <div class="buttons">
+            <a href="#services" class="btn primary">اكتشف خدماتنا</a>
+            <a href="#contact" class="btn secondary">تواصل معنا</a>
+        </div>
+    </section>
+
+
+    <section id="services">
+        <h2 class="section-title">وش نقدر نسوي لك؟</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <div class="number">01</div>
+                <h3>واجهة رقمية</h3>
+                <p>
+                    صفحة احترافية تجمع خدماتك،
+                    منتجاتك، عروضك وطرق التواصل
+                    في مكان واحد.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="number">02</div>
+                <h3>منيو رقمي</h3>
+                <p>
+                    عرض مرتب للخدمات أو المنتجات
+                    والأسعار مع وصول مباشر للطلب.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="number">03</div>
+                <h3>كتالوج إلكتروني</h3>
+                <p>
+                    طريقة احترافية لعرض أعمالك
+                    ومنتجاتك بدون تعقيد.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="number">04</div>
+                <h3>صفحة عروض</h3>
+                <p>
+                    صفحة مخصصة لعرض حملة أو عرض
+                    وتحويل الزائر مباشرة للتواصل.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="number">05</div>
+                <h3>صفحة حجز</h3>
+                <p>
+                    تسهّل على العميل معرفة الخدمة
+                    والوصول للحجز أو الاستفسار.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="number">06</div>
+                <h3>حلول مخصصة</h3>
+                <p>
+                    نبني لك الحل الرقمي المناسب
+                    حسب طبيعة نشاطك واحتياجه.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <div class="cta" id="contact">
+        <h2>عندك نشاط وتبي تطوره؟</h2>
+
+        <p>
+            خلنا نرتب حضورك الرقمي بطريقة أوضح،
+            أسرع وأسهل لعملائك.
+        </p>
+
+        <a href="https://wa.me/" class="btn secondary">
+            تواصل معنا
+        </a>
+    </div>
+
+</main>
+
+<footer>
+    © 2026 وَشْيِ — جميع الحقوق محفوظة
+</footer>
+
+</body>
+</html>
